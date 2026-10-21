@@ -1,64 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-
-  <title>Cocos Creator | zombie-queen-cocos</title>
-
-  <!--http://www.html5rocks.com/en/mobile/mobifying/-->
-  <meta name="viewport"
-        content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1,minimal-ui=true"/>
-
-  <!--https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html-->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="format-detection" content="telephone=no">
-
-  <!-- force webkit on 360 -->
-  <meta name="renderer" content="webkit"/>
-  <meta name="force-rendering" content="webkit"/>
-  <!-- force edge on IE -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <meta name="msapplication-tap-highlight" content="no">
-
-  <!-- force full screen on some browser -->
-  <meta name="full-screen" content="yes"/>
-  <meta name="x5-fullscreen" content="true"/>
-  <meta name="360-fullscreen" content="true"/>
-
-  <!--fix fireball/issues/3568 -->
-  <!--<meta name="browsermode" content="application">-->
-  <meta name="x5-page-mode" content="app">
-
-  <!--<link rel="apple-touch-icon" href=".png" />-->
-  <!--<link rel="apple-touch-icon-precomposed" href=".png" />-->
-
-  <link rel="stylesheet" type="text/css" href="style.css"/>
-
-</head>
-<body>
-  <div id="GameDiv" cc_exact_fit_screen="true">
-      <div id="Cocos3dGameContainer">
-        <canvas id="GameCanvas" oncontextmenu="event.preventDefault()" tabindex="99"></canvas>
-      </div>
-    </div>
-  
-
-<!-- Polyfills bundle. -->
-
-<script src="src/polyfills.bundle.js" charset="utf-8"> </script>
-
-
-<!-- SystemJS support. -->
-<script src="src/system.bundle.js" charset="utf-8"> </script>
-
-<!-- Import map -->
-<script src="src/import-map.json" type="systemjs-importmap" charset="utf-8"> </script>
-
-<script>
-    System.import('./index.js').catch(function(err) { console.error(err); })
-</script>
-
-</body>
-</html>
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<!-- zq-wrapper -->
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
+<title>Zombie Queen — Cocos</title>
+<style>
+  html,body{margin:0;height:100%;background:#1b1426;overflow:hidden;overscroll-behavior:none}
+  body{display:flex;align-items:center;justify-content:center}
+  #g{border:0;display:block;height:100vh;height:100dvh;width:min(100vw,calc(100vh * 9 / 16));width:min(100vw,calc(100dvh * 9 / 16));touch-action:none}
+  #rot{display:none}
+  @media (orientation:landscape) and (pointer:coarse){
+    #g{visibility:hidden}
+    #rot{display:flex;position:fixed;inset:0;align-items:center;justify-content:center;flex-direction:column;color:#e9e2f5;font:600 18px/1.5 sans-serif;background:#1b1426}
+  }
+</style></head><body>
+<iframe id="g" allow="autoplay; fullscreen"></iframe>
+<div id="rot"><div style="font-size:48px">&#x21BB;</div>휴대폰을 세로로 돌려 주세요</div>
+<script>document.getElementById('g').src = 'game.html' + location.search; document.getElementById('g').focus();</script>
+</body></html>
